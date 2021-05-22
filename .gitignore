@@ -1,0 +1,17 @@
+
+.cache/
+coverage/
+bundle.js
+!dist/index.html
+node_modules/
+*.log
+sampleData.js
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+dump/
