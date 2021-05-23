@@ -13,37 +13,26 @@ class App extends React.Component {
     this.deleteTodo = this.deleteTodo.bind(this);
   }
 
-  getTodo() {
-    axios
-      .get('/todo')
-      .then(({ data }) => {
-        this.setState({ todos: data });
-      })
-      .catch((err) => console.error(err));
-  }
-  componentDidMount() {
-    this.getTodo();
-  }
   addNewTodo(todo) {
-    axios
-      .post('/todo', todo)
-      .then(() => this.getTodo())
-      .catch((err) => console.error(err));
+    this.setState(({ todos }) => ({
+      todos: [...todos, todo],
+    }));
   }
 
-  markDone(todo) {
-    const done = !todo.done;
-    axios
-      .put(`/todo/${todo._id}`, { done })
-      .then(() => this.getTodo())
-      .catch((err) => console.error(err));
+  markDone(idx) {
+    this.setState(({ todos }) => {
+      const newTodos = todos.slice();
+      newTodos[idx].done = !todos[idx].done;
+      return { todos: newTodos };
+    });
   }
 
-  deleteTodo(id) {
-    axios
-      .delete(`/todo/${id}`)
-      .then(() => this.getTodo())
-      .catch((err) => console.error(err));
+  deleteTodo(idx) {
+    this.setState(({ todos }) => {
+      const newTodos = todos.slice();
+      newTodos.splice(idx, 1);
+      return { todos: newTodos };
+    });
   }
 
   render() {
