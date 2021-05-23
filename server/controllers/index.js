@@ -17,7 +17,6 @@ module.exports = {
   write: async (req, res) => {
     try {
       const newData = req.body;
-      newData.created_at = Date.now();
       await models.create(newData);
       res.sendStatus(201);
     } catch (err) {
@@ -29,7 +28,6 @@ module.exports = {
     try {
       const id = req.params.id;
       const updateData = req.body;
-      updateData.updated_at = Date.now();
       await models.update(id, updateData);
       res.sendStatus(201);
     } catch (err) {
@@ -39,7 +37,7 @@ module.exports = {
   },
   destroy: async (req, res) => {
     try {
-      const id = req.query.id;
+      const id = req.params.id;
       await models.delete(id);
       res.sendStatus(204);
     } catch (err) {

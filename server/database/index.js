@@ -8,7 +8,10 @@ mongoose.connect(mongoUri, {
   useCreateIndex: true,
 });
 
-const collectionSchema = new mongoose.Schema({});
+const collectionSchema = new mongoose.Schema({
+  value: String,
+  done: Boolean,
+});
 
 const Collection = mongoose.model('Collection', collectionSchema);
 
