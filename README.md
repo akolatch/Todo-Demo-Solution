@@ -6,7 +6,7 @@ all work happens in client/src
 
 1. Set up ReactDom
 2. Figure out data shape and make sample
-   1. for each todo you will need a way to store the text and and if it has been completed
+   1. for each todo you will need a way to store the text and mark if it has been complected
 3. create and dynamically render sample data
 4. Implement add todo
 5. implement mark done and delete
@@ -20,7 +20,7 @@ To get started run:
 - `npm install`
 - `npm run build-start`
 
-#### Using the Provided Server/Monog Setup
+#### Using the Provided Server/Mongo Setup
 
 Note: must have MongoDB server
 
@@ -39,9 +39,10 @@ To get started run:
 
 ###### GET: `'/todo'`
 
-Body: none
+Return:
 
-Returns: a list of all todos
+- Status: 200
+- Data: Array of all todos in the db
 
 ```javascript
 [
@@ -62,32 +63,33 @@ Returns: a list of all todos
 
 ###### POST: `'/todo'`
 
-Body:
+| Parameter | Type    | In   | Description                                   |
+| --------- | ------- | ---- | --------------------------------------------- |
+| value     | String  | body | the text of the todo being created            |
+| done      | Boolean | body | boolean representing if the todo is completed |
 
-```javascript
-value: Sting <THE TEXT OF THE TODO>
+Return:
 
-done: Boolean <IS THE TODO COMPLETE>
-```
-
-return: 201 created
+- Status: 201
+- Created
 
 ###### PUT: `'/todo/:id'`
 
-Path variable: \_id of todo be update
+| Parameter | Type   | In   | Description                                                                          |
+| --------- | ------ | ---- | ------------------------------------------------------------------------------------ |
+| id        | Sting  | path | The `_id` of the todo being updated                                                  |
+| updates   | Object | body | An object where the keys are the fields to be updated and the values are the updates |
 
-Body:
+Return:
 
-```javascript
-done: Boolean;
-```
-
-Return: 204 updated
+- Status: 204
 
 DELETE `'todo/:id'`
 
-Path Variable: \_id of todo be deleted
+| Parameter | Type  | In   | Description                         |
+| --------- | ----- | ---- | ----------------------------------- |
+| id        | Sting | path | The `_id` of the todo being deleted |
 
-Body: none
+Return:
 
-Return: 202 deleted
+- Status: 204
