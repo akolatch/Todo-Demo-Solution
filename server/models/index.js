@@ -9,10 +9,10 @@ module.exports = {
   },
 
   update: async (id, updateData) => {
-    await Collection.findByIdAndUpdate(id, updateData);
+    return await Collection.findByIdAndUpdate(id, updateData);
   },
 
   delete: async (id) => {
-    await Collection.findByIdAndDelete(id);
+    return await Collection.findByIdAndDelete(id);
   },
 };

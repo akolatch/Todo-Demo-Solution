@@ -5,8 +5,8 @@
   --grey10: #ced4da;
   --grey30: #d1d5da59;
   --grey50: #adafbb5e;
-  --grey70: #495057;
-  --grey90: #1b1f2326;
+  --grey70: #1b1f234f;
+  --grey90: #495057;
   --green30: #57ab5a;
   --green50: #46954a;
   --red30: #fa7d7d;
@@ -17,7 +17,7 @@
 /* General */
 /* ******* */
 body {
-  color: var(--grey70);
+  color: var(--grey90);
   font-family: 'Roboto', sans-serif;
   margin: 0;
   display: flex;
@@ -33,11 +33,11 @@ main {
   box-shadow: 20px 0px 20px 0px var(--grey50), -10px 0px 20px 4px var(--grey50);
   height: 100vh;
   padding: 1em 3em;
-  overflow: auto;
+  min-width: 64ch;
 }
 
 button {
-  border: 1px solid var(--grey90);
+  border: 1px solid var(--grey50);
   box-shadow: inset 0 1px 0 0 var(--grey10);
   color: white;
   border-radius: 6px;
@@ -63,13 +63,17 @@ input {
   border: 1px solid var(--grey10);
   border-radius: 6px;
   margin-right: 1em;
+  width: 40ch;
 }
-
+input::placeholder {
+  color: var(--grey70);
+}
 /* *********** */
 /* List Styles */
 /* *********** */
 ul {
   padding: 0;
+  overflow: auto;
 }
 
 li {

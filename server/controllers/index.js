@@ -29,7 +29,7 @@ module.exports = {
       const id = req.params.id;
       const updateData = req.body;
       await models.update(id, updateData);
-      res.sendStatus(201);
+      res.sendStatus(204);
     } catch (err) {
       console.error(err);
       res.sendStatus(500);
@@ -39,7 +39,7 @@ module.exports = {
     try {
       const id = req.params.id;
       await models.delete(id);
-      res.sendStatus(204);
+      res.sendStatus(202);
     } catch (err) {
       console.error(err);
       res.sendStatus(500);
