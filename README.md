@@ -1,6 +1,6 @@
 # React Todo List Example
 
-### Build a React todo list
+## Build a React todo list
 
 all work happens in client/src
 
@@ -11,16 +11,16 @@ all work happens in client/src
 4. Implement add todo
 5. implement mark done and delete
 
-### Getting started
+## Getting started
 
-#### React Only
+### React Only
 
 To get started run:
 
 - `npm install`
 - `npm run build-start`
 
-#### Using the Provided Server/Mongo Setup
+### Using the Provided Server/Mongo Setup
 
 Note: must have MongoDB server
 
@@ -35,13 +35,13 @@ To get started run:
 - To start build
   - `npm run build-dev`
 
-##### API paths:
+### API paths:
 
-###### GET: `'/todo'`
+GET: `'/todo'`
 
 Return:
 
-- Status: 200
+- Status: `200 OK`
 - Data: Array of all todos in the db
 
 ```javascript
@@ -61,7 +61,7 @@ Return:
 ];
 ```
 
-###### POST: `'/todo'`
+POST: `'/todo'`
 
 | Parameter | Type    | In   | Description                                   |
 | --------- | ------- | ---- | --------------------------------------------- |
@@ -70,10 +70,9 @@ Return:
 
 Return:
 
-- Status: 201
-- Created
+- Status: `201 CREATED`
 
-###### PUT: `'/todo/:id'`
+PUT: `'/todo/:id'`
 
 | Parameter | Type   | In   | Description                                                                          |
 | --------- | ------ | ---- | ------------------------------------------------------------------------------------ |
@@ -82,7 +81,7 @@ Return:
 
 Return:
 
-- Status: 204
+- Status: `204`
 
 DELETE `'todo/:id'`
 
@@ -92,4 +91,4 @@ DELETE `'todo/:id'`
 
 Return:
 
-- Status: 204
+- Status: `204`
