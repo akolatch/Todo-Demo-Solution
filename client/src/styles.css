@@ -1,44 +1,73 @@
-body {
-  color: #495057;
-  font-family: 'Roboto', sans-serif;
-  padding: 2em 3em;
-  display: flex;
+/* ****** */
+/* Colors */
+/* ****** */
+:root {
+  --grey10: #ced4da;
+  --grey30: #d1d5da59;
+  --grey50: #adafbb5e;
+  --grey70: #495057;
+  --grey90: #1b1f2326;
+  --green30: #57ab5a;
+  --green50: #46954a;
+  --red30: #fa7d7d;
+  --red50: #da5c5c;
+}
 
+/* ******* */
+/* General */
+/* ******* */
+body {
+  color: var(--grey70);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: var(--grey30);
   justify-content: center;
 }
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  box-shadow: 20px 0px 20px 0px var(--grey50), -10px 0px 20px 4px var(--grey50);
+  height: 100vh;
+  padding: 1em 3em;
+  overflow: auto;
 }
-h1 {
-  padding-bottom: 1em;
-}
+
 button {
-  border: 1px solid #1b1f2326;
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--grey90);
+  box-shadow: inset 0 1px 0 0 var(--grey10);
   color: white;
-  border: 1px solid #1b1f2326;
   border-radius: 6px;
 }
 
+h1 {
+  padding: 1em 0;
+}
+
+/* ************** */
+/* AddForm Styles */
+/* ************** */
 form button {
-  background-color: #57ab5a;
+  background-color: var(--green30);
   padding: 0.5em 1.5em;
 }
 form button:hover {
-  background-color: #46954a;
+  background-color: var(--green50);
 }
 
 input {
   padding: 0.5em 1em;
-  margin-top: 2px;
-  margin-bottom: 1em;
-  border: 1px solid #ced4da;
+  border: 1px solid var(--grey10);
   border-radius: 6px;
   margin-right: 1em;
 }
 
+/* *********** */
+/* List Styles */
+/* *********** */
 ul {
   padding: 0;
 }
@@ -48,28 +77,30 @@ li {
   align-items: center;
   justify-content: space-between;
   list-style-type: none;
-  border-bottom: 1px #d1d5da solid;
+  border-bottom: 1px solid var(--grey10);
   padding: 1em;
   width: 60ch;
 }
-
 li:hover {
-  background-color: #d1d5da59;
+  background-color: var(--grey30);
 }
+
+/* Todo Text */
 li span {
   padding: 1.5em 1.5em;
   width: 75%;
 }
 li span:hover {
-  background-color: #d1d5da59;
+  background-color: var(--grey30);
   border-radius: 6px;
 }
 
+/* X Button */
 li button {
-  font-size: 1.1em;
-  background-color: #fa7d7d;
-  padding: 0.5em 0.8em;
+  font-size: 1em;
+  background-color: var(--red30);
+  padding: 0.4em 0.7em;
 }
 li button:hover {
-  background-color: #da5c5c;
+  background-color: var(--red50);
 }

@@ -1,17 +1,12 @@
 import React from 'react';
 import Todo from './Todo';
 
-const TodoList = ({ todos, deleteTodo, markDone }) => (
+const TodoList = () => (
   <ul>
-    {todos.map((todo, i) => (
-      <Todo
-        key={`${todo.value}${i}`}
-        idx={i}
-        todo={todo}
-        deleteTodo={deleteTodo}
-        markDone={markDone}
-      />
-    ))}
+    <Todo>set up app state</Todo>
+    <Todo>dynamical render app list</Todo>
+    <Todo>implement add </Todo>
+    <Todo>implement delete and mark done</Todo>
   </ul>
 );
 
