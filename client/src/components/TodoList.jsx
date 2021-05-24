@@ -8,7 +8,14 @@ function TodoList({ todos, markDone, remove }) {
         <Todo
           i={i}
           todo={todo}
-          key={`${todo.value}${i}`}
+          /**
+           * when mapping of items in a list React request that we give
+           * each return component a unique key. It best practice to NOT use the index
+           * however in this case it is the only unique vale we have access to
+           * if we don't add a key react will give a warning in the console but
+           * it is not a breaking error
+           */
+          key={i}
           done={markDone}
           remove={remove}
         />
