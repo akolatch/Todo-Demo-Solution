@@ -108,3 +108,14 @@ li button {
 li button:hover {
   background-color: var(--red50);
 }
+
+@media screen and (max-width: 900px) {
+  main {
+    width: 100vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  li {
+    max-width: 40ch;
+  }
+}

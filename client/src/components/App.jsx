@@ -68,8 +68,8 @@ class App extends React.Component {
            * properties or 'props' we assigned it. When TodoList is invoke by React will be
            * passed a props object that looks like:
            * {
-           *  remove: this.remove
-           *  markDone: this.markDone
+           *  remove: this.remove,
+           *  markDone: this.markDone,
            *  todos: this.state.todoList
            * }
            *

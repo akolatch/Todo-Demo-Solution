@@ -4,6 +4,9 @@ function Todo({ todo, done, remove, i }) {
   return (
     <li>
       <span
+        /**
+         * here we are conditionally setting the textDecoration style base
+         */
         style={{ textDecoration: todo.done ? 'line-through' : 'none' }}
         onClick={() => done(i)}
       >
