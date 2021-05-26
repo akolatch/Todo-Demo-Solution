@@ -20,5 +20,11 @@ To get started run:
 - `npm install`
 - `npm audit fix`
 - `npm start`
+  You App will be running at http://localhost:8080/
 
-You App will be running at http://localhost:8080/
+To pull down the solution:
+
+to create a solution on your local repo and switch to it
+`git co -b solution`  
+to pull down the solution
+`pull https://github.com/akolatch/Todo-Demo-Solution.git solution`
